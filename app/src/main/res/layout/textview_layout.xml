@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="This is a 'sans' demo!"
+        android:typeface="sans"
+        />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="This is a the default typeface, 'normal' demo(same as san)!"
+        android:typeface="normal"
+        android:ellipsize="end"
+        android:singleLine="true"
+        android:textSize="18sp"
+        />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="This is a 'serif' demo!,minLines is 2"
+        android:typeface="serif"
+        android:textStyle="bold"
+        android:minLines="2"
+        />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="This is a 'monospace' demo!"
+        android:typeface="monospace"
+        android:maxLines="3"
+        android:minLines="1"
+
+        />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="A light blue shadow."
+        android:shadowColor="#00ccff"
+        android:shadowRadius="1.5"
+        android:shadowDx="1"
+        android:shadowDy="1"
+        />
+    <!-- textColorHighlight 被选中文字的底色，默认为蓝色-->
+    <TextView
+        android:id="@+id/tvHtmlColor"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColorHighlight="#7C82D2"
+        android:textColorHint="#2DC942"
+        android:textColorLink="#8DE67F"
+        android:text="http://ghostfromheaven.iteye.com/blog/752181"
+
+        android:textSize="18sp"
+        android:autoLink="all"
+        android:linksClickable="true"
+
+        />
+    <TextView
+        android:id="@+id/tvHtml"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        />
+    <TextView
+        android:id="@+id/tvCustom"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        />
+
+
+
+</LinearLayout>
