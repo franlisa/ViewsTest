@@ -74,7 +74,7 @@ Assuming you are using the AppCompat library, you can override the styles colorC
 </style>        
 ###TextInputLayout 监听输入
 如果想如下效果
-![](https://github.com/franlisa/ViewsTest/blob/master/app/src/main/res/mipmap-hdpi/UM7NmiK.gif)
+![](https://github.com/franlisa/ViewsTest/blob/master/app/src/main/res/mipmap-hdpi/UM7NmiK.gif)     
 则可以借助TextInputLayout，首先要添加依赖
 然后在布局中，将editText添加一层TextInputLayout
 <android.support.design.widget.TextInputLayout>
