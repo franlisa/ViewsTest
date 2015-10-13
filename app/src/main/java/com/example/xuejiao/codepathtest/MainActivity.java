@@ -4,7 +4,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.text.TextUtils;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -34,7 +33,7 @@ public class MainActivity extends AppCompatActivity {
         mAdapter =new ArrayAdapter<>(this,android.R.layout.simple_list_item_1,mItems);
         mLvItems.setAdapter(mAdapter);
         mItems.add("TextView");
-        mItems.add("item2");
+        mItems.add("EditText");
         mItems.add("item3");
         mBtnAddItem.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -59,13 +58,17 @@ public class MainActivity extends AppCompatActivity {
            @Override
            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                String text=mItems.get(position);
-               Log.e("fxj","click "+text);
-               if(! TextUtils.isEmpty(text) && text.equals("TextView")){
-                   Intent intent = new Intent(MainActivity.this,TextViewActivity.class);
-                   startActivity(intent);
-
-
+               if(! TextUtils.isEmpty(text) ){
+                   if(text.equals("TextView")){
+                       Intent intent = new Intent(MainActivity.this,TextViewActivity.class);
+                       startActivity(intent);
+                   }else if(text.equals("EditText")){
+                       Intent intent = new Intent(MainActivity.this,EditTextActivity.class);
+                       startActivity(intent);
+                   }
                }
+
+
            }
        });
 
