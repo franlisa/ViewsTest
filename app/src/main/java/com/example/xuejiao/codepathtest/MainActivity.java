@@ -34,7 +34,7 @@ public class MainActivity extends AppCompatActivity {
         mLvItems.setAdapter(mAdapter);
         mItems.add("TextView");
         mItems.add("EditText");
-        mItems.add("item3");
+        mItems.add("ImageView");
         mBtnAddItem.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -64,6 +64,9 @@ public class MainActivity extends AppCompatActivity {
                        startActivity(intent);
                    }else if(text.equals("EditText")){
                        Intent intent = new Intent(MainActivity.this,EditTextActivity.class);
+                       startActivity(intent);
+                   }else if(text.equals("ImageView")){
+                       Intent intent = new Intent(MainActivity.this,ImageViewActivity.class);
                        startActivity(intent);
                    }
                }
