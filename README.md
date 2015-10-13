@@ -51,19 +51,18 @@ Span相关可以用来对一个TextView设置不同的样式。例如不同的�
 ##EditText
 EditText继承于TextView,所以TextView中的东西EditText也可以用，例如android:textColorHighlight,lines等
 ###一些属性
-android:digits 限制输入的数字有哪些
-maxLength: 限制输入的长度，注意与此类似的还有ems的设置，可以blog他们的区别
-inputType:输入类型限制，例如number等，常见的如下：      
- Type    	         Description           
-textUri	            Text that will be used as a URI     
-textEmailAddress	Text that will be used as an e-mail address     
-textPersonName	    Text that is the name of a person       
-textPassword	    Text that is a password that should be obscured     
-number	            A numeric only field        
-phone	            For entering a phone number     
-date	            For entering a date     
-time	            For entering a time     
-textMultiLine	    Allow multiple lines of text in the field       
+android:digits 限制输入的数字有哪些     
+maxLength: 限制输入的长度，注意与此类似的还有ems的设置，可以blog他们的区别      
+inputType:输入类型限制，例如number等，常见的如下：            
+*textUri: Text that will be used as a URI     
+*textEmailAddress	Text that will be used as an e-mail address     
+*textPersonName	    Text that is the name of a person       
+*textPassword	    Text that is a password that should be obscured     
+*number	            A numeric only field        
+*phone	            For entering a phone number     
+*date	            For entering a date     
+*time	            For entering a time     
+*textMultiLine	    Allow multiple lines of text in the field       
 ###修改底部横线颜色
 Assuming you are using the AppCompat library, you can override the styles colorControlNormal,        colorControlActivated, and colorControlHighlight:       
     
@@ -81,8 +80,7 @@ Assuming you are using the AppCompat library, you can override the styles colorC
 ....
 然后在代码中对EditText设置监听器，addTextChangedListener，在onTextChange中处理我们的限定判断逻辑，然后调用TextInputLayout相应的setError,setErrorEnable函数来实现，具体使用见EditTextActivity.java
 ##ImageView 
-对于ImageView，主要要注意scaleType的使用，使用不当会引起图片拉伸，截取等问题。      
-ScaleType	       Description           
+对于ImageView，主要要注意scaleType的使用，使用不当会引起图片拉伸，截取等问题        
 center            Displays the image centered in the view with no scaling.        
 centerCrop	      Scales the image such that both the x and y dimensions are greater than or equal to the   view, while maintaining the image aspect ratio; centers the image in the view.        
 centerInside	  Scales the image to fit inside the view, while maintaining the image aspect ratio. If the image is already smaller than the view, then this is the same as center.        
