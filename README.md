@@ -88,8 +88,15 @@ Assuming you are using the AppCompat library, you can override the styles colorC
 5.fitStart:Same as fitCenter but aligned to the top left of the view.      
 6.fitEnd:Same as fitCenter but aligned to the bottom right of the view.      
 7.fitXY:Scales the x and y dimensions to exactly match the view size; does not maintain the image aspect ratio.      
-8.matrix:Scales the image using a supplied Matrix class. The matrix can be supplied using the setImageMatrix method. A Matrix class can be used to apply transformations such as rotations to an image.      
+8.matrix:Scales the image using a supplied Matrix class. The matrix can be supplied using the setImageMatrix method. A Matrix class can be used to apply transformations such as rotations to an image.     
+使用效果如下：
 
+第一行依次是  center, centerCrop, centerInside.     
+第二行依次是  fitCenter, fitStart, fitEnd, fitXY.
+所以当我们在开发photo相关的应用时，应该使用center或fitCenter
+如果我们要使用fitXY，一定要注意拉伸的问题，因为它不能保持纵横比，如果要解决纵横比问题，可以结合android:adjustViewBounds来使用，但是height 跟width要有一个是被另一个适应的，所以我们要width拉伸到我们要的指定dp,那么设置height为wrap_content或maxHeigth，相应的如果height要拉伸到指定dp,设置width是被适应的，然后加上android:adjustViewBounds＝"true"这样就能保证纵横比
+###setImageResource VS setImageDrawable
+ setImageResource does Bitmap reading and decoding on the UI thread, which can cause a latency hiccup.所以我们更多的是使用setImageDrawable
 
 
 
