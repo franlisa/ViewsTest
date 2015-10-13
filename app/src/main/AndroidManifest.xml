@@ -19,6 +19,7 @@
         <activity android:name=".TextViewActivity"></activity>
         <activity android:name=".EditTextActivity"></activity>
         <activity android:name=".ImageViewActivity"></activity>
+        <activity android:name=".SpinnerActivity"></activity>
     </application>
 
 </manifest>

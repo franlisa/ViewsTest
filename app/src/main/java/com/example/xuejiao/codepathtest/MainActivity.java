@@ -35,6 +35,7 @@ public class MainActivity extends AppCompatActivity {
         mItems.add("TextView");
         mItems.add("EditText");
         mItems.add("ImageView");
+        mItems.add("Spinner");
         mBtnAddItem.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -67,6 +68,9 @@ public class MainActivity extends AppCompatActivity {
                        startActivity(intent);
                    }else if(text.equals("ImageView")){
                        Intent intent = new Intent(MainActivity.this,ImageViewActivity.class);
+                       startActivity(intent);
+                   }else if(text.equals("Spinner")){
+                       Intent intent = new Intent(MainActivity.this,SpinnerActivity.class);
                        startActivity(intent);
                    }
                }
