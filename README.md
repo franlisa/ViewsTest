@@ -48,6 +48,41 @@ Span相关可以用来对一个TextView设置不同的样式。例如不同的�
                                         Spanned.SPAN_INCLUSIVE_EXCLUSIVE  //behavior when text is latter inserted into theSpannableStringBuilder    
                 ); 
 具体使用见TextViewActivity.java
+##EditText
+EditText继承于TextView,所以TextView中的东西EditText也可以用，例如android:textColorHighlight,lines等
+###一些属性
+android:digits 限制输入的数字有哪些
+maxLength: 限制输入的长度，注意与此类似的还有ems的设置，可以blog他们的区别
+inputType:输入类型限制，例如number等，常见的如下：
+Type	Description     
+textUri	Text that will be used as a URI     
+textEmailAddress	Text that will be used as an e-mail address     
+textPersonName	Text that is the name of a person       
+textPassword	Text that is a password that should be obscured     
+number	A numeric only field        
+phone	For entering a phone number     
+date	For entering a date     
+time	For entering a time     
+textMultiLine	Allow multiple lines of text in the field       
+###修改底部横线颜色
+Assuming you are using the AppCompat library, you can override the styles colorControlNormal,        colorControlActivated, and colorControlHighlight:       
+    
+<style name="Theme.App.Base" parent="Theme.AppCompat.Light.DarkActionBar">      
+    <item name="colorControlNormal">#d32f2f</item>      
+    <item name="colorControlActivated">#ff5722</item>       
+    <item name="colorControlHighlight">#f44336</item>       
+</style>        
+###TextInputLayout 监听输入
+如果想如下效果
+[![image]](https://github.com/franlisa/ViewsTest/blob/master/app/src/main/res/mipmap-hdpi/UM7NmiK.gif)
+则可以借助TextInputLayout，首先要添加依赖
+然后在布局中，将editText添加一层TextInputLayout
+<android.support.design.widget.TextInputLayout>
+....
+然后在代码中对EditText设置监听器，addTextChangedListener，在onTextChange中处理我们的限定判断逻辑，然后调用TextInputLayout相应的setError,setErrorEnable函数来实现，具体使用见EditTextActivity.java
+
+
+
 
 
 
