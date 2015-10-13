@@ -74,12 +74,23 @@ Assuming you are using the AppCompat library, you can override the styles colorC
 </style>        
 ###TextInputLayout 监听输入
 如果想如下效果      
-![](https://github.com/franlisa/ViewsTest/blob/master/app/src/main/res/mipmap-hdpi/UM7NmiK.gif)     
+![](https://github.com/franlisa/ViewsTest/blob/master/app/UM7NmiK.gif)     
 则可以借助TextInputLayout，首先要添加依赖
 然后在布局中，将editText添加一层TextInputLayout
 <android.support.design.widget.TextInputLayout>
 ....
 然后在代码中对EditText设置监听器，addTextChangedListener，在onTextChange中处理我们的限定判断逻辑，然后调用TextInputLayout相应的setError,setErrorEnable函数来实现，具体使用见EditTextActivity.java
+##ImageView 
+对于ImageView，主要要注意scaleType的使用，使用不当会引起图片拉伸，截取等问题。
+Scale Type	Description     
+center	Displays the image centered in the view with no scaling.        
+centerCrop	Scales the image such that both the x and y dimensions are greater than or equal to the view, while maintaining the image aspect ratio; centers the image in the view.        
+centerInside	Scales the image to fit inside the view, while maintaining the image aspect ratio. If the image is already smaller than the view, then this is the same as center.        
+fitCenter	Scales the image to fit inside the view, while maintaining the image aspect ratio. At least one axis will exactly match the view, and the result is centered inside the view.       
+fitStart	Same as fitCenter but aligned to the top left of the view.      
+fitEnd	Same as fitCenter but aligned to the bottom right of the view.      
+fitXY	Scales the x and y dimensions to exactly match the view size; does not maintain the image aspect ratio.      
+matrix	Scales the image using a supplied Matrix class. The matrix can be supplied using the setImageMatrix method. A Matrix class can be used to apply transformations such as rotations to an image.      
 
 
 
