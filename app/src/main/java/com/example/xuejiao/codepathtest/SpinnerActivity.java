@@ -8,12 +8,19 @@ import android.widget.ArrayAdapter;
 import android.widget.Spinner;
 import android.widget.Toast;
 
+import com.example.xuejiao.codepathtest.adapter.SpinnerCustomeAdapter;
+import com.example.xuejiao.codepathtest.model.Person;
+
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * Created by xuejiao on 15/10/13.
  */
 public class SpinnerActivity extends Activity {
     private Spinner mSpLanguage;
     private Spinner mSpLanguageUsingAdapet;
+    private Spinner mSpCustom;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -48,9 +55,22 @@ public class SpinnerActivity extends Activity {
 
             }
         });
+        //自定义adapter
+        List<Person> mList=new ArrayList<Person>();
+        mList.add(new Person("张三","上海"));
+        mList.add(new Person("李四","北京"));
+        mList.add(new Person("王伍","厦门"));
+        mList.add(new Person("李六","杭州"));
+        mList.add(new Person("周七","厦门"));
+        SpinnerCustomeAdapter spinnerCustomeAdapter = new SpinnerCustomeAdapter(mList,this);
+        mSpCustom.setAdapter(spinnerCustomeAdapter);
+
+
+
     }
     private  void initViews(){
         mSpLanguage = (Spinner) findViewById(R.id.spinner_language);
         mSpLanguageUsingAdapet= (Spinner)findViewById(R.id.spinner_adapter);
+        mSpCustom= (Spinner)findViewById(R.id.spinner_custom);
     }
 }

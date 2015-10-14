@@ -10,10 +10,16 @@
         >
     </Spinner>
     <Spinner
-        android:id="@+id/spinner_adapter"
+    android:id="@+id/spinner_adapter"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    ></Spinner>
+    <Spinner
+        android:id="@+id/spinner_custom"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         ></Spinner>
+
 
 
 </LinearLayout>
