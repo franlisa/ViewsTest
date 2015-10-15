@@ -79,6 +79,13 @@ Assuming you are using the AppCompat library, you can override the styles colorC
 <android.support.design.widget.TextInputLayout>
 ....
 然后在代码中对EditText设置监听器，addTextChangedListener，在onTextChange中处理我们的限定判断逻辑，然后调用TextInputLayout相应的setError,setErrorEnable函数来实现，具体使用见EditTextActivity.java
+###imeOptions属性与软键盘有下角不同图标
+虽然通常输入法软键盘右下角会是回车按键，但我们经常会看到点击不同的编辑框，输入法软键盘右下角会有不同的图标，例如go 搜索，发送，完成等等，这个是通过EditText的imeOptions来设置的，然后在代码中通过editText.setOnEditorActionListener方法添加相应的监听，因为有些action是需要在代码中添加具体的相关操作的。但是会发现我们设置的没生效，图标还是回车。经过实验发现当我们有设置了singleLine，或者inputTpye为text的时候，imeOptions就生效了
+
+而我们点击Google搜索框，输入法软键盘右下角会变成 放大镜 或者“搜索”
+而决定这个图标的变换的参数就是EditText中的 android:imeOptions
+
+android:imeOptions的值有actionGo、 actionSend 、actionSearch、actionDone等
 ##ImageView 
 对于ImageView，主要要注意scaleType的使用，使用不当会引起图片拉伸，截取等问题        
 1.center ： Displays the image centered in the view with no scaling.        
@@ -97,6 +104,7 @@ Assuming you are using the AppCompat library, you can override the styles colorC
 如果我们要使用fitXY，一定要注意拉伸的问题，因为它不能保持纵横比，如果要解决纵横比问题，可以结合android:adjustViewBounds来使用，但是height 跟width要有一个是被另一个适应的，所以我们要width拉伸到我们要的指定dp,那么设置height为wrap_content或maxHeigth，相应的如果height要拉伸到指定dp,设置width是被适应的，然后加上android:adjustViewBounds＝"true"这样就能保证纵横比
 ###setImageResource VS setImageDrawable
  setImageResource does Bitmap reading and decoding on the UI thread, which can cause a latency hiccup.所以我们更多的是使用setImageDrawable
+ 
 
 
 
