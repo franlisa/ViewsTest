@@ -101,19 +101,20 @@ Assuming you are using the AppCompat library, you can override the styles colorC
 ###setImageResource VS setImageDrawable
  setImageResource does Bitmap reading and decoding on the UI thread, which can cause a latency hiccup.所以我们更多的是使用setImageDrawable
 ##WebView
- webview注意以下几个问题：
- 1)如果load的页面是远程的url页面，需要加入访问internet权限；但是如果是load工程下assets的本地html，则无需加入internet权限
- 2)如果访问的页面中有 javascript，则webView必须设置支持javaScript；而webView的设置都是通过webViewSettings来做的，例如WebView.getSettings().setJavaScriptEnabled(true);，还可以设置是否可以缩放，是否显示缩放图标等
- 3) 如果页面中链接,如果希望点击链接继续在当前browser中响应,而不是新开Android的系统browser中响应该链接,必须覆盖 WebView的WebViewClient对象.      
+ webview注意以下几个问题：		
+ 1)如果load的页面是远程的url页面，需要加入访问internet权限；但是如果是load工程下assets的本地html，则无需加入internet权限		
+ 2)如果访问的页面中有 javascript，则webView必须设置支持javaScript；而webView的设置都是通过webViewSettings来做的，例如WebView.getSettings().setJavaScriptEnabled(true);，还可以设置是否可以缩放，是否显示缩放图标等	
+ 3) 如果页面中链接,如果希望点击链接继续在当前browser中响应,而不是新开Android的系统browser中响应该链接,必须覆盖 WebView的WebViewClient对象		     
 mWebView.setWebViewClient(new WebViewClient(){      
 	public boolean shouldOverrideUrlLoading(WebView view, String url){      
 		view.loadUrl(url);      
 		return true;        
 	}          
 });     
-shouldOverrideUrlLoading用来处理页面中国有链接的情况
-4)如果我们选择了在当前browser中来显示点击抵链接，那么我们点 返回键 会直接退出了webView,如果要能够回到之前的webView内容，需要重写onKeyDown,对back键进行处理，调用webView的goBack函数来返回到历史webView内容。
-5)与 js的互调是通过addJavascriptInterface来实现。
+4)shouldOverrideUrlLoading用来处理页面中有链接的情况		
+如果我们选择了在当前browser中来显示点击抵链接，那么我们点返回键会直接退出了webView,如果要能够回到之前的	
+webView内容，需要重写onKeyDown,对back键进行处理，调用webView的goBack函数来返回到历史webView内容。	
+5)与 js的互调是通过addJavascriptInterface来实现。		
 ##ScrollView
 通过在Xml中定义scrollView或HorizonScrollView就可以对view添加滚动条，但是注意，一个scrollView只能包含一个子元素，所以如果有多个view包含在scrollView中，我们必须在scrollView内添加一层layout，然后将要scoll的View放在该layout内。
 ###fillViewport属性
