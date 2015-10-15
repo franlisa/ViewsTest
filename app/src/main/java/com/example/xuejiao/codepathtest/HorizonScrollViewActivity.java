@@ -2,6 +2,7 @@ package com.example.xuejiao.codepathtest;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 
@@ -16,16 +17,20 @@ public class HorizonScrollViewActivity extends Activity {
         setContentView(R.layout.horizon_scrollview_layout);
         initViews();
         for(int i=0;i<8;i++){
-            ImageView imageView = new ImageView(this);
+            final ImageView imageView = new ImageView(this);
             LinearLayout.LayoutParams  layoutParams= new LinearLayout.LayoutParams(200,200);
 //            layoutParams.setMargins(2,2,2,2);
             imageView.setLayoutParams(layoutParams);
             imageView.setScaleType(ImageView.ScaleType.CENTER_CROP);
             imageView.setImageDrawable(getResources().getDrawable(R.mipmap.ic_launcher));
             imageView.setBackgroundDrawable(getResources().getDrawable(R.drawable.shape_solid_color));
-
-//
             mLlScrollView.addView(imageView);
+            imageView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    imageView.setBackgroundDrawable(getResources().getDrawable(R.drawable.shape_gradient_color));
+                }
+            });
 
 
 
