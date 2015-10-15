@@ -8,5 +8,6 @@
         android:layout_height="wrap_content"
         android:text="张三 上海"
         android:drawableLeft="@mipmap/contact"
+        android:drawablePadding="5dp"
        />
 </LinearLayout>

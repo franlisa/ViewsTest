@@ -84,14 +84,7 @@
         android:textSize="8sp"
 
         />
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="input your name"
-        android:maxLines="1"
-        android:drawableLeft="@mipmap/contact"
-        android:drawablePadding="3sp"
-        />
+
 
 
 </LinearLayout>

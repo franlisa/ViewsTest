@@ -3,14 +3,18 @@
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent">
     <EditText
+        android:id="@+id/ed_multiline"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:inputType="textCapSentences|textMultiLine"
         android:hint="input multiLine text"
         android:textColorHint="#696969"
+        android:imeOptions="actionNext"
 
         />
+    <!-- 设置了singleLine 或者 android:inputType="text" imeOptions 就会生效？-->
     <EditText
+        android:id="@+id/ed_zero_one"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:inputType="number"
@@ -20,7 +24,18 @@
         android:hint="input 0 or 1"
         android:textColorHint="#696969"
         android:textColorHighlight="#7cff88"
+        android:imeOptions="actionNext"
 
+        />
+    <EditText
+        android:id="@+id/ed_userName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="input your name"
+        android:maxLines="1"
+        android:drawableLeft="@mipmap/contact"
+        android:drawablePadding="3sp"
+        android:imeOptions="actionSend"
         />
     <android.support.design.widget.TextInputLayout
         android:id="@+id/textInputLayout"
@@ -28,14 +43,17 @@
         android:layout_height="wrap_content">
 
         <EditText
-            android:id="@+id/etUsername"
+            android:id="@+id/ed_input_layout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
             android:layout_centerVertical="true"
-
-            android:hint="Username" />
+            android:hint="Username"
+            android:inputType="text"
+            android:imeOptions="actionDone"/>
 
     </android.support.design.widget.TextInputLayout>
+
+
 
 </LinearLayout>

@@ -67,6 +67,7 @@ public class SpinnerActivity extends Activity {
 
 
 
+
     }
     private  void initViews(){
         mSpLanguage = (Spinner) findViewById(R.id.spinner_language);
