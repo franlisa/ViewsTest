@@ -22,6 +22,7 @@ public class HorizonScrollViewActivity extends Activity {
             imageView.setLayoutParams(layoutParams);
             imageView.setScaleType(ImageView.ScaleType.CENTER_CROP);
             imageView.setImageDrawable(getResources().getDrawable(R.mipmap.ic_launcher));
+            imageView.setBackgroundDrawable(getResources().getDrawable(R.drawable.shape_solid_color));
 
 //
             mLlScrollView.addView(imageView);
