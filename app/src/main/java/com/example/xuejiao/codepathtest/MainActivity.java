@@ -36,6 +36,7 @@ public class MainActivity extends AppCompatActivity {
         mItems.add("EditText");
         mItems.add("ImageView");
         mItems.add("Spinner");
+        mItems.add("WebView");
         mBtnAddItem.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -71,6 +72,9 @@ public class MainActivity extends AppCompatActivity {
                        startActivity(intent);
                    }else if(text.equals("Spinner")){
                        Intent intent = new Intent(MainActivity.this,SpinnerActivity.class);
+                       startActivity(intent);
+                   }else if(text.equals("WebView")){
+                       Intent intent = new Intent(MainActivity.this, WebViewActivity.class);
                        startActivity(intent);
                    }
                }

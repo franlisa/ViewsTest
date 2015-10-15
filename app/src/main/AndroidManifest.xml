@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.xuejiao.codepathtest" >
+    <uses-permission android:name="android.permission.INTERNET"></uses-permission>
 
     <application
         android:allowBackup="true"
@@ -20,6 +21,7 @@
         <activity android:name=".EditTextActivity"></activity>
         <activity android:name=".ImageViewActivity"></activity>
         <activity android:name=".SpinnerActivity"></activity>
+        <activity android:name=".WebViewActivity"></activity>
     </application>
 
 </manifest>
