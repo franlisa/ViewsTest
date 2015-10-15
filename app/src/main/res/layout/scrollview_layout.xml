@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"-->
+    <!--android:orientation="vertical" android:layout_width="match_parent"-->
+    <!--android:layout_height="match_parent">-->
+
+
+    <!--<TextView-->
+        <!--android:id="@+id/tvImage"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:gravity="center"-->
+        <!--android:text="@string/long_text"-->
+
+        <!--android:scrollbars="vertical"-->
+        <!--android:textSize="22sp"-->
+
+
+        <!--/>-->
+
+
+
+<!--</LinearLayout>-->
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/scrollView"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#0000ff"
+     android:fillViewport="true"
+
+    >
+    <!-- 分别设置蓝色与绿色背景 是为了验证fillViewport属性作用-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#00ff00"
+        android:orientation="vertical" >
+        <Button
+            android:id="@+id/btn_horizon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="horizon" >
+       </Button>
+        <TextView
+
+            android:id="@+id/tv_long"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:textColor="#000000"
+            android:textSize="20sp"
+            android:text="@string/long_text" >
+        </TextView>
+
+
+    </LinearLayout>
+
+</ScrollView>

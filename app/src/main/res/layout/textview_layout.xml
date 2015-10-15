@@ -73,18 +73,24 @@
         />
 
     <TextView
-        android:id="@+id/tvImage"
+
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:gravity="center"
-        android:text="my contact "
         android:drawableRight="@mipmap/contact"
         android:drawablePadding="10dp"
+        android:scrollbars="vertical"
+        android:textSize="20sp"
+        android:text="contact"
 
-        android:textSize="8sp"
 
         />
-
-
+    <TextView
+        android:id="@+id/tvImage"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/long_text"
+        android:textSize="20sp"
+        />
 
 </LinearLayout>

@@ -22,6 +22,8 @@
         <activity android:name=".ImageViewActivity"></activity>
         <activity android:name=".SpinnerActivity"></activity>
         <activity android:name=".WebViewActivity"></activity>
+        <activity android:name=".ScrollViewActivity"></activity>
+        <activity android:name=".HorizonScrollViewActivity"></activity>
     </application>
 
 </manifest>

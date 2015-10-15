@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.text.Html;
 import android.text.SpannableStringBuilder;
 import android.text.Spanned;
+import android.text.method.ScrollingMovementMethod;
 import android.text.style.ForegroundColorSpan;
 import android.text.style.StrikethroughSpan;
 import android.widget.TextView;
@@ -16,6 +17,7 @@ public class TextViewActivity extends Activity {
     private TextView mTvHtml;
     private  TextView mTvHtmlColor;
     private  TextView mTvCustom;
+    private  TextView mTvImage;
     private String mStringCustomFirst="hello";
     private String mStringCustomSec="world";
     @Override
@@ -23,6 +25,7 @@ public class TextViewActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.textview_layout);
        initViews();
+        mTvImage.setMovementMethod(new ScrollingMovementMethod());
         String htmlText=getString(R.string.htmlFormattedText);
         mTvHtml.setText(Html.fromHtml(htmlText));
 //       mTvHtmlColor.setText(Html.fromHtml(htmlText));
@@ -57,6 +60,7 @@ public class TextViewActivity extends Activity {
         mTvHtml = (TextView)findViewById(R.id.tvHtml);
 //        mTvHtmlColor = (TextView)findViewById(R.id.tvHtmlColor);
         mTvCustom=(TextView)findViewById(R.id.tvCustom);
+        mTvImage=(TextView)findViewById(R.id.tvImage);
 
     }
 }

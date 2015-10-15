@@ -37,6 +37,7 @@ public class MainActivity extends AppCompatActivity {
         mItems.add("ImageView");
         mItems.add("Spinner");
         mItems.add("WebView");
+        mItems.add("ScrollView");
         mBtnAddItem.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -75,6 +76,9 @@ public class MainActivity extends AppCompatActivity {
                        startActivity(intent);
                    }else if(text.equals("WebView")){
                        Intent intent = new Intent(MainActivity.this, WebViewActivity.class);
+                       startActivity(intent);
+                   }else  if(text.equals("ScrollView")){
+                       Intent intent = new Intent(MainActivity.this,ScrollViewActivity.class);
                        startActivity(intent);
                    }
                }
