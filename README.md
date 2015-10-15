@@ -80,12 +80,8 @@ Assuming you are using the AppCompat library, you can override the styles colorC
 ....
 然后在代码中对EditText设置监听器，addTextChangedListener，在onTextChange中处理我们的限定判断逻辑，然后调用TextInputLayout相应的setError,setErrorEnable函数来实现，具体使用见EditTextActivity.java
 ###imeOptions属性与软键盘有下角不同图标
-虽然通常输入法软键盘右下角会是回车按键，但我们经常会看到点击不同的编辑框，输入法软键盘右下角会有不同的图标，例如go 搜索，发送，完成等等，这个是通过EditText的imeOptions来设置的，然后在代码中通过editText.setOnEditorActionListener方法添加相应的监听，因为有些action是需要在代码中添加具体的相关操作的。但是会发现我们设置的没生效，图标还是回车。经过实验发现当我们有设置了singleLine，或者inputTpye为text的时候，imeOptions就生效了
+虽然通常输入法软键盘右下角会是回车按键，但我们经常会看到点击不同的编辑框，输入法软键盘右下角会有不同的图标，例如go 搜索，发送，完成等等，这个是通过EditText的imeOptions来设置的(有actionGo、 actionSend 、actionSearch、actionDone等)，然后在代码中通过editText.setOnEditorActionListener方法添加相应的监听，因为有些action是需要在代码中添加具体的相关操作的。但是会发现我们设置的没生效，图标还是回车。经过实验发现当我们有设置了singleLine，或者inputTpye为text的时候，imeOptions就生效了
 
-而我们点击Google搜索框，输入法软键盘右下角会变成 放大镜 或者“搜索”
-而决定这个图标的变换的参数就是EditText中的 android:imeOptions
-
-android:imeOptions的值有actionGo、 actionSend 、actionSearch、actionDone等
 ##ImageView 
 对于ImageView，主要要注意scaleType的使用，使用不当会引起图片拉伸，截取等问题        
 1.center ： Displays the image centered in the view with no scaling.        
