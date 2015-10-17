@@ -122,32 +122,32 @@ webView内容，需要重写onKeyDown,对back键进行处理，调用webView的g
 ###TextView的scroll属性android:scrollbars
 对于textView的scroll,我们不必在布局中添加scrollVIew,只需要对textView添加android:scrollbars属性就会让TextView有滚动条。同时要通过代码textView.setMovementMethod(new ScrollingMovementMethod());设置才能让滚动条滚动
 ##drawable
-先看下面的代码：		
-\<shape\>
-            <!-- 实心 -->
-            \<solid android:color="#ff9d77"/\>
-            <!-- 渐变 -->
-            \<gradient
-                android:startColor="#ff8c00"
-                android:endColor="#FFFFFF"
-                android:angle="270" /\>
-            <!-- 描边 -->
-            \<stroke
-                android:width="2dp"
-                android:color="#dcdcdc" /\>
-            <!-- 圆角 -->
-            \<corners
-                android:radius="2dp" /\>
-            \<padding
-                android:left="10dp"
-                android:top="10dp"
-                android:right="10dp"
-                android:bottom="10dp" /\>
-        \</shape\>
-solid：实心，就是填充的意思		
-android:color指定填充的颜色		
+先看下面的代码：				
+\<shape\>		
+            <!-- 实心 -->		
+            \<solid android:color="#ff9d77"/\>		
+            <!-- 渐变 -->		
+            \<gradient			
+                android:startColor="#ff8c00"		
+                android:endColor="#FFFFFF"		
+                android:angle="270" /\>		
+            <!-- 描边 -->		
+            \<stroke		
+                android:width="2dp"		
+                android:color="#dcdcdc" /\>		
+            <!-- 圆角 -->				
+            \<corners		
+                android:radius="2dp" /\>		
+            \<padding		
+                android:left="10dp"		
+                android:top="10dp"		
+                android:right="10dp"		
+                android:bottom="10dp" /\>		
+        \</shape\>		
+solid：实心，就是填充的意思				
+android:color指定填充的颜色				
 		
-gradient：渐变		
+gradient：渐变				
 android:startColor和android:endColor分别为起始和结束颜色，ndroid:angle是渐变角度，必须为45的整数倍。	
 另外渐变默认的模式为android:type="linear"，即线性渐变，可以指定渐变为径向渐变，android:type="radial"，径向渐变需要指定半径android:gradientRadius="50"。		
 
