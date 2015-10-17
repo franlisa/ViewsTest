@@ -122,33 +122,58 @@ webView内容，需要重写onKeyDown,对back键进行处理，调用webView的g
 ###TextView的scroll属性android:scrollbars
 对于textView的scroll,我们不必在布局中添加scrollVIew,只需要对textView添加android:scrollbars属性就会让TextView有滚动条。同时要通过代码textView.setMovementMethod(new ScrollingMovementMethod());设置才能让滚动条滚动
 ##drawable
+先看下面的代码：		
+        <shape>		
+            <!-- 实心 -->		
+            <solid android:color="#ff9d77"/>		
+            <!-- 渐变 -->		
+            <gradient		
+                android:startColor="#ff8c00"		
+                android:endColor="#FFFFFF"		
+                android:angle="270" />		
+            <!-- 描边 -->			
+            <stroke		
+                android:width="2dp"		
+                android:color="#dcdcdc" />		
+            <!-- 圆角 -->		
+            <corners		
+                android:radius="2dp" />		
+            <padding		
+                android:left="10dp"		
+                android:top="10dp"		
+                android:right="10dp"		
+                android:bottom="10dp" />		
+        </shape>		
+solid：实心，就是填充的意思		
+android:color指定填充的颜色		
+		
+gradient：渐变		
+android:startColor和android:endColor分别为起始和结束颜色，ndroid:angle是渐变角度，必须为45的整数倍。	
+另外渐变默认的模式为android:type="linear"，即线性渐变，可以指定渐变为径向渐变，android:type="radial"，径向渐变需要指定半径android:gradientRadius="50"。		
+
+stroke：描边A stroke line for the shape		
+android:width="2dp" 描边的宽度，android:color 描边的颜色。		
+我们还可以把描边弄成虚线的形式，设置方式为：		
+android:dashWidth="5dp" 			
+android:dashGap="3dp"		
+其中android:dashWidth表示'-'这样一个横线的宽度，android:dashGap表示之间隔开的距离。		
 
 
+corners：圆角		
+android:radius为角的弧度，值越大角越圆。		
+我们还可以把四个角设定成不同的角度，方法为：		
+<corners 		
+        android:topRightRadius="20dp"    右上角		
+        android:bottomLeftRadius="20dp"    右下角		
+        android:topLeftRadius="1dp"    左上角		
+        android:bottomRightRadius="0dp"    左下角		
+ />		
+这里有个地方需要注意，bottomLeftRadius是右下角，而不是左下角，这个有点郁闷，不过不影响使用，记得别搞错了就行。		
+还有网上看到有人说设置成0dp无效，不过我在测试中发现是可以的，我用的是2.2，可能修复了这个问题吧，如果无效的话那就只能设成1dp了。		
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+padding：间隔		
+这个就不用多说了，XML布局文件中经常用到。		
+Padding to apply to the containing View element (this pads the position of the View content, not the shape).	然后我们可以使用selector来定义不同状态下的不同item,例如在listview中，我们定义了点击时候的颜色渐变，然后通过listSelector来定义，我们也可以作用于list的item布局的background.
 
 
 
