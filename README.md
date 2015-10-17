@@ -20,12 +20,12 @@ autoLink,linksClickable: 用来设置当内容是类型"http",email,电话号码
 ###在文本中插入html文本
 在setText时候使用Html.fromHtml(formattedText))；
 如果html文本是写在value/string中的话，需要使用CDATA区分，如下
-<string name="htmlFormattedText">   
+\<string name="htmlFormattedText"\>   
     <![CDATA[   
         Please <a href="http://highlight.com">let us know</a> if you have <b>feedback on this</b> or if     
         you would like to log in with <i>another identity service</i>. Thanks!      
     ]]>   
-</string>   
+\</string\>   
 ###在TextView中放入图片
 textView可以直接使用drawableRight/left/bottom/top来在内容中插入图片，同时通过android:drawablePadding来指定与文字内容的距离。
 另外，因为EditText,Button,RadioButton等都是继承于textView 所以他们也都支持Textview这些功能。
@@ -127,23 +127,23 @@ webView内容，需要重写onKeyDown,对back键进行处理，调用webView的g
             <!-- 实心 -->
             \<solid android:color="#ff9d77"/\>
             <!-- 渐变 -->
-            <gradient
+            \<gradient
                 android:startColor="#ff8c00"
                 android:endColor="#FFFFFF"
-                android:angle="270" />
+                android:angle="270" /\>
             <!-- 描边 -->
-            <stroke
+            \<stroke
                 android:width="2dp"
-                android:color="#dcdcdc" />
+                android:color="#dcdcdc" /\>
             <!-- 圆角 -->
-            <corners
-                android:radius="2dp" />
-            <padding
+            \<corners
+                android:radius="2dp" /\>
+            \<padding
                 android:left="10dp"
                 android:top="10dp"
                 android:right="10dp"
-                android:bottom="10dp" />
-        </shape>
+                android:bottom="10dp" /\>
+        \</shape\>
 solid：实心，就是填充的意思		
 android:color指定填充的颜色		
 		
@@ -162,12 +162,12 @@ android:dashGap="3dp"
 corners：圆角		
 android:radius为角的弧度，值越大角越圆。		
 我们还可以把四个角设定成不同的角度，方法为：		
-<corners 		
+\<corners 		
         android:topRightRadius="20dp"    右上角		
         android:bottomLeftRadius="20dp"    右下角		
         android:topLeftRadius="1dp"    左上角		
         android:bottomRightRadius="0dp"    左下角		
- />		
+ /\>		
 这里有个地方需要注意，bottomLeftRadius是右下角，而不是左下角，这个有点郁闷，不过不影响使用，记得别搞错了就行。		
 还有网上看到有人说设置成0dp无效，不过我在测试中发现是可以的，我用的是2.2，可能修复了这个问题吧，如果无效的话那就只能设成1dp了。		
 
