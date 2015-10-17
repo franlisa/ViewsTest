@@ -30,7 +30,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         initViews();
         mItems = new ArrayList<>();
-        mAdapter =new ArrayAdapter<>(this,android.R.layout.simple_list_item_1,mItems);
+        mAdapter =new ArrayAdapter<>(this,R.layout.listview_item_layout,mItems);
         mLvItems.setAdapter(mAdapter);
         mItems.add("TextView");
         mItems.add("EditText");

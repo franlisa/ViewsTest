@@ -23,7 +23,10 @@
         android:layout_alignParentTop="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:layout_above="@+id/btnAddItems" />
+        android:layout_above="@+id/btnAddItems"
+
+        android:listSelector="@drawable/listview_state_selector"
+       />
 
     <EditText
         android:layout_width="wrap_content"
