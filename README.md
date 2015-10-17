@@ -123,27 +123,27 @@ webView内容，需要重写onKeyDown,对back键进行处理，调用webView的g
 对于textView的scroll,我们不必在布局中添加scrollVIew,只需要对textView添加android:scrollbars属性就会让TextView有滚动条。同时要通过代码textView.setMovementMethod(new ScrollingMovementMethod());设置才能让滚动条滚动
 ##drawable
 先看下面的代码：		
-		 <shape>
+\<shape\>
             <!-- 实心 -->
-		            <solid android:color="#ff9d77"/>
+            <solid android:color="#ff9d77"/>
             <!-- 渐变 -->
-		            <gradient
-        		        android:startColor="#ff8c00"
-        		     android:endColor="#FFFFFF"
-        		     android:angle="270" />
+            <gradient
+                android:startColor="#ff8c00"
+                android:endColor="#FFFFFF"
+                android:angle="270" />
             <!-- 描边 -->
-        		 <stroke
-        		  android:width="2dp"
-        		  android:color="#dcdcdc" />
+            <stroke
+                android:width="2dp"
+                android:color="#dcdcdc" />
             <!-- 圆角 -->
-        		  <corners
-        		   android:radius="2dp" />
-            		<padding
-        		  android:left="10dp"
-        		  android:top="10dp"
-        		  android:right="10dp"
-        		 android:bottom="10dp" />
-		 </shape>
+            <corners
+                android:radius="2dp" />
+            <padding
+                android:left="10dp"
+                android:top="10dp"
+                android:right="10dp"
+                android:bottom="10dp" />
+        </shape>
 solid：实心，就是填充的意思		
 android:color指定填充的颜色		
 		
