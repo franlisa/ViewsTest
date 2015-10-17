@@ -121,6 +121,54 @@ webView内容，需要重写onKeyDown,对back键进行处理，调用webView的g
 当想让一个高度值不足scrollview的子控件fillparent的时候，单独的定义android:layout_height="fill_parent"是不起作用的（scrollView_layout中使用了不同背景颜色验证了），必须加上fillviewport属性，当子控件的高度值大于scrollview的高度时，这个标签就没有任何意义了。
 ###TextView的scroll属性android:scrollbars
 对于textView的scroll,我们不必在布局中添加scrollVIew,只需要对textView添加android:scrollbars属性就会让TextView有滚动条。同时要通过代码textView.setMovementMethod(new ScrollingMovementMethod());设置才能让滚动条滚动
+##drawable
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
  
  
 
