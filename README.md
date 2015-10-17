@@ -125,7 +125,7 @@ webView内容，需要重写onKeyDown,对back键进行处理，调用webView的g
 先看下面的代码：		
 \<shape\>
             <!-- 实心 -->
-            <solid android:color="#ff9d77"/>
+            \<solid android:color="#ff9d77"/\>
             <!-- 渐变 -->
             <gradient
                 android:startColor="#ff8c00"
